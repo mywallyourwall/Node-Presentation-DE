@@ -1,0 +1,17 @@
+{
+  "name": "mywallyourwall",
+  "version": "0.0.1",
+    "homepage": "http://radiant-day-2191.herokuapp.com/",
+  "dependencies": {
+    "express": "x.x.x",
+    "socket.io": "0.8.2",
+    "coffee-script": "1.1.2",
+     "stylus": "0.14.0",
+    //"uglify-js": "1.0.6",
+    "jade": "0.26.0" 
+  },
+  "devDependencies": {
+    "nodemon": "0.5.3",
+    "node-inspector": "0.1.8"
+  }
+}

@@ -1,0 +1,91 @@
+div#chat
+ul(id="slides")
+  li(class="active", data-title="Was ist Node.js?") 
+    h2 Serverseitiges Javascript?
+    p Node.js eine eventbasierte JavaScript-Laufzeitumgebung auf Basis von Googles V8-Engine. Node.js:
+    ul
+      li verarbeitet den Code eventbasiert (Eigenschaft von JS)
+      li ist modular. Module sind aufgesplittet und erst geladen, wenn sie nötig sind.
+      li ist skalierbar. Node.js kann tausend Parallelverbindungen bewältigen.
+      li wird von Google, Yahoo, Twitter, Github, LinkedIn, Ebay, Mozilla unter anderen verwendet.
+
+  li(data-title="Node.js Verwendungen") 
+    h2 Was kann Node.js?
+    p Da Node.js kann alles, was andere Programmiersprachen können und mehr === Eine Codebasis in einer Sprache
+    p 
+      strong Module und Bibliotheken
+    ul
+      li Social network authentication
+      li Datenbank-Anbindungen
+      li Datenverarbeiter und Parser
+      li Template-Engines
+      li Web-Framework
+      li vieles vieles mehr
+
+  li(data-title="Wie sieht Node.js aus?")
+    h2 Ein einfacher Webserver
+    p In der Konsole ausführen:
+     code node myapp.js
+    code
+      pre
+        | var http = require('http');
+        | http.createServer(function (req, res) {
+        |   res.writeHead(200, {'Content-Type': 'text/plain'});
+        |   res.end('Hello World');
+        |   console.log("Server ist gestartet!");
+        | }).listen(1337, '127.0.0.1');
+        | console.log("Server ist noch nicht gestartet!");
+    p Node.js wird weiter arbeiten, bis die Callback von http.createServer gefeuert wird
+
+  li(data-title="Node.js Installieren") 
+    h2 Installer verfügbar für Windows, Mac und Linux
+    p Module können über einen Packetmanager <strong>'npm'</strong> installiert werden 
+    code
+      pre
+        | npm install haml
+        | npm install sass
+        | npm install coffee-script
+
+  li(data-title="Vorteile von Node.js") 
+    h2 Wofür ist Node.js geeignet?
+    ul
+      li Schnelle Echtzeit-Applikationen: Parsing Uploads, Twitter, Chat software, Sportberichterstattung oder Schnittstellen zu Instant Messaging Networks
+      li Webservices und APIs - JSON-REST = Eine Kommunikationsschnittstelle für Zugriff auf Daten/Ressourcen. Beispiel: http://bild.de/get/all/sports/stories/madonna 
+      li Single-page Apps (im Vergleich zu Webpages, wobei SEO oder der Content am wichtigsten sind). Datenschicht und UI sind getrennt, weniger Templates, schneller
+
+  li(data-title="Begrenzungen von Node.js") 
+    h2 Node.js bietet noch keine Vorteile:
+    ul
+     li bei CPU-hungrig Applikationen  
+     li bei der Lieferung von statischem Inhalt
+     li weil es noch jung ist, PHP/Ruby/Python/Java alle haben eine riesige Menge Bibliotheken
+
+
+  li(data-title="Unter der Motorhaube dieser Presi") 
+    h2 HTML, CSS, JS mit Node.js
+    p Mit Node.js aufgebaut. Läuft auf Heroku, deployt mit Git für Agile Development
+    p Node vereinfacht, vereinheitlicht und beschleunigt Webentwicklung. Templatingsprachen, wie SASS und HAML werden automatisch kompiliert.
+    ul
+      li Laufzeit HTML Templating und Parsen (z.B JADE, HAML): ermöglicht sinvolle Verwaltung von HTML
+
+      li Laufzeit CSS Parsen (z.B Stylus, SASS): Programming für CSS!!
+      li Laufzeit Coffeescript Kompiler - sauberes und valides Javascript
+
+  li(data-title="Node.js und BILD.de?") 
+    h2 Die Anwendbarkeit von Node.js
+    p BILD.de hat große Wünsche auf Realtime Applikationen:
+    ul
+     li Social Bar - News, Freundschaft Anfrage, Chat, Nachrichten
+     li Realtime Commenting - wir fragen den Server X-mal ab. Warum kann der Server uns nicht Beschied geben, wenn er etwas Neues hat?
+     li Liveticker: Die neusten von der Redaktion. Geil!!!
+     li Zukunft: Newsticker und Breaking News
+
+  li(data-title="Links") 
+    h2 Links
+    ul
+      li
+        a(href="http://nodejs.org/") Node.js
+      li
+        a(href="http://npmjs.org/") Node Packet Manager
+      li
+        a(href="http://nodeguide.com/index.html") Node.js Guide

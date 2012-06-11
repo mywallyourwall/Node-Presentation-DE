@@ -1,0 +1,227 @@
+/* Variables
+--------------------------------------------------------------------------*/
+$bright-green = #33FF00
+$darker-green = #24B200
+$base-font-color = #FFFFFF
+$alt-font-color = #000000
+$base-font = Helvetica, Arial, "Lucida Grande", "Lucida Sans", Tahoma, Verdana, sans-serif
+$web-font = 'Voces', Arial, serif
+$base-font-size = 24px
+$base-padding = 20px
+$sm-padding = 10px
+
+/* Mixins
+--------------------------------------------------------------------------*/
+
+@import "mixins/css3"
+
+webfont(size)
+  font-family $web-font
+  font-weight 400
+  font-size size
+
+bubble(whiteOn = false)
+  if whiteOn
+   background-color rgba(255,255,255,0.5)
+  else
+   background-color rgba(0,0,0,0.5)
+  border-radius(7px)
+  padding $base-padding
+
+text-shad(colour = $alt-font-color)
+  text-shadow 2px 2px 3px colour
+
+/* Reset
+-----------------------------------------------------------------------------*/
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strike, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td 
+  margin 0
+  padding 0
+  border 0
+  outline 0
+  font-size 100%
+  vertical-align baseline
+ul, ol
+  list-style none  
+
+/* 
+Trigger the new block level elements in to the correct content flow
+-----------------------------------------------------------------------------*/
+article, aside, dialog, figure, 
+footer, header, hgroup, menu, 
+nav, section  
+  display block 
+      
+
+/* Set up document
+-----------------------------------------------------------------------------*/
+body
+  font 62.5%/1.5 $base-font
+  color $base-font-color
+  text-align center
+  background #111 url(../img/irongrip.png)
+
+#wrapper
+  width 90%
+  text-align left 
+  margin-left auto 
+  margin-right auto
+  margin-bottom $base-padding
+  clear both
+  height 100%
+  border-width 0
+  background 0
+
+a
+  &:hover
+  &:link
+  &:active
+    color $bright-green
+
+a.button,
+button
+  font-size 20px
+  padding $base-padding
+  linear-gradient(#18c91e,#08850c)
+  color $base-font-color
+  border-radius(6px)
+  border 0px solid #003366
+  box-shadow(0px 0px 0px rgba(000,000,000,0),inset 0px 0px 1px rgba(255,255,255,1))
+  text-shadow 0px -1px 0px rgba(000,000,000,0.7),0px 1px 0px rgba(255,255,255,0.3)
+  display inline-block
+  margin $base-padding
+
+textarea,
+input
+  padding $base-padding
+  font-family $web-font
+  font-size 20px
+  margin $base-padding
+  border-radius(6px)
+  border 0px solid #003366
+  color $alt-font-color
+
+textarea
+  min-height 100px
+
+h2
+ webfont(30px)
+ padding-bottom $base-padding
+ color $darker-green
+p
+  padding-bottom $base-padding
+canvas
+  background-color $base-font-color
+
+code
+  pre
+    font-size 16px
+    display block
+    padding-bottom $base-padding
+    padding-left $base-padding
+
+
+/* Header
+-----------------------------------------------------------------------------*/
+header
+  padding $base-padding
+  text-align center
+  h1
+    margin 0
+    webfont(40px)
+    text-shad()
+    span
+     display inline-block
+     color $darker-green
+
+/* Slides
+-----------------------------------------------------------------------------*/
+#chat
+  height 500px
+  float right
+  width 20%
+  overflow hidden
+  webfont(24px)
+  opacity .8
+  z-index 10
+  top 0
+  left 0
+  text-align left
+  display none
+  bubble()
+  p
+    opacity 0
+    transition(all .5s ease-out);
+    line-height 1
+    border-bottom 2px solid rgba(0,0,0,0.5)
+    padding $sm-padding
+    &.active
+      opacity 1
+    em
+      font-weight 700
+      color $bright-green
+      display block
+      margin-bottom $sm-padding
+    img
+      display block
+      border 0
+      width 200px
+      height 150px
+
+#index #chat
+  display block
+
+ul#slides
+  width 70%
+  float left
+  font-size $base-font-size
+  position relative
+  & > li
+    left 0
+    position absolute
+    top 0
+    bubble()
+    width 90%
+    box-shadow(0 0 $sm-padding #666) 
+    padding 40px
+    opacity 0
+    transition(all .4s ease-out)
+    &.active
+      opacity 1
+      z-index 100
+    ul
+      list-style disc
+      padding-left $base-padding
+      margin-left $base-padding
+      padding-bottom $base-padding
+      li
+        opacity 1
+        margin-bottom $base-padding
+
+/* Log
+-----------------------------------------------------------------------------*/
+#log
+  bubble(true)
+  webfont(24px)
+  position absolute
+  bottom -20px
+  left 20px
+  opacity 0
+  transition(all .7s ease-out)
+  &.active
+    opacity 1
+    bottom 20px
+
+
+
+
+
+
+

@@ -1,0 +1,15 @@
+!!! 5
+html
+  head
+    title= title
+    link(rel="stylesheet", href="http://fonts.googleapis.com/css?family=Voces")
+    link(rel="stylesheet", href="/stylesheets/style.css")
+    script(src="/lib/jquery.min.js")
+    script(src="/socket.io/socket.io.js")
+    script(src="/js/main.js")
+  body(id= pageid)
+    header
+      h1= title
+       span#slide-title
+    section#wrapper!= body
+    div#log Log
